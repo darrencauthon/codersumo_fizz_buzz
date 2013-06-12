@@ -8,12 +8,21 @@ describe FizzBuzz do
     FizzBuzz.nil?.must_equal false
   end
 
-  it "should return 1 for 1" do
-    FizzBuzz.call(1).must_equal "1"
-  end
-
-  it "should return 2 for 2" do
-    FizzBuzz.call(2).must_equal '2'
+  [
+    [1, '1'],
+    [2, '2'],
+    [3, 'Fizz'],
+    [5, 'Buzz'],
+    [6, 'Fizz'],
+    [10, 'Buzz'],
+    [12, 'Fizz'],
+    [15, 'FizzBuzz'],
+    [20, 'Buzz'],
+    [30, 'FizzBuzz'],
+  ].each do |test|
+    it "should return #{test[0]} for #{test[1]}" do
+      FizzBuzz.call(test[0]).must_equal test[1]
+    end
   end
 end
 
